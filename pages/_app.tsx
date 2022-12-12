@@ -1,6 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+import { RootProvider } from 'providers/RootProvider';
+
+import '../public/static/fonts/stylesheet.css';
+
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
+    return (
+        <RootProvider>
+            <Component {...pageProps} />
+        </RootProvider>
+    );
+};
+export default App;
